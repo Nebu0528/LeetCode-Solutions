@@ -11,24 +11,21 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        //starting at head
-        //the previous is nullptr
-        //the current node is the head
-        ListNode *prev = nullptr;
+        //set the current and previous nodes
         ListNode *curr = head;
+        ListNode* prev = nullptr;
 
-        //while we are at the current node
         while (curr){
-            //create a temporary next node
-            ListNode *temp_next = curr->next;
-            //set the previous node as curr->next
+            //set a reference to the next node
+            ListNode *temp = curr->next;
+            //reverse the next node by setting it to the previous
             curr->next = prev;
-            //set previous to be the current
+            //move the previous pointer to curr
             prev = curr;
-            //set the current to be the next node
-            curr = temp_next;
+            //set the current pointer to be the temp pointer
+            curr = temp;
+
         }
-        //return the previous node
         return prev;
     }
 };

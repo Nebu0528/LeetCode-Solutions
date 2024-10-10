@@ -1,0 +1,8 @@
+206. Reverse Linked List
+    Set the pointers prev and curr
+    While curr is not a nullptr
+        set a temp pointer *temp to curr->next
+        we set the previous node to be curr->next
+        we set prev pointer to be curr pointer
+        Set curr pointer to be temp pointer
+    Return prev
